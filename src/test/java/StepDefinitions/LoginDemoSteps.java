@@ -33,10 +33,10 @@ public class LoginDemoSteps {
 		driver.navigate().to("https://practicetestautomation.com/practice-test-login/");
 	}
 
-	@When("users enter username and password")
-	public void users_enter_username_and_password() {
-		driver.findElement(By.id("username")).sendKeys("student");
-		driver.findElement(By.id("password")).sendKeys("Password123");
+	@When("^users enter (.*) and (.*)$")
+	public void users_enter_username_and_password(String username, String password) {
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 		
 	}
 	@And("users click in submit")
